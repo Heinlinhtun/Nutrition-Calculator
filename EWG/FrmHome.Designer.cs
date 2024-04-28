@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
             panel1 = new Panel();
+            BtnCaledMenu = new Button();
             BtnReceipt = new Button();
             BtnIngred = new Button();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             TxtSearch = new TextBox();
             PnlContainer = new Panel();
-            BtnCaledMenu = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -55,6 +55,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(187, 571);
             panel1.TabIndex = 0;
+            // 
+            // BtnCaledMenu
+            // 
+            BtnCaledMenu.BackColor = SystemColors.Control;
+            BtnCaledMenu.Location = new Point(3, 251);
+            BtnCaledMenu.Name = "BtnCaledMenu";
+            BtnCaledMenu.Size = new Size(181, 50);
+            BtnCaledMenu.TabIndex = 0;
+            BtnCaledMenu.Text = "Calculated Receipts";
+            BtnCaledMenu.UseVisualStyleBackColor = false;
+            BtnCaledMenu.Click += BtnReceipt_Click;
             // 
             // BtnReceipt
             // 
@@ -117,17 +128,6 @@
             PnlContainer.Size = new Size(1009, 510);
             PnlContainer.TabIndex = 1;
             // 
-            // BtnCaledMenu
-            // 
-            BtnCaledMenu.BackColor = SystemColors.Control;
-            BtnCaledMenu.Location = new Point(3, 251);
-            BtnCaledMenu.Name = "BtnCaledMenu";
-            BtnCaledMenu.Size = new Size(181, 50);
-            BtnCaledMenu.TabIndex = 0;
-            BtnCaledMenu.Text = "Calculated Receipts";
-            BtnCaledMenu.UseVisualStyleBackColor = false;
-            BtnCaledMenu.Click += BtnReceipt_Click;
-            // 
             // FrmHome
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -140,7 +140,10 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmHome";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
+            WindowState = FormWindowState.Maximized;
+            Load += FrmHome_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);

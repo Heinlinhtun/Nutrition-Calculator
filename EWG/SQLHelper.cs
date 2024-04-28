@@ -47,11 +47,10 @@ namespace EWG
                 {
                     dgv.Rows.Add();
                     dgv.Rows[i].Cells[0].Value = i + 1;
-                    for (int c = 1; c < dt.Columns.Count; c++)
+                    for (int c = 1; c < dt.Columns.Count + 1; c++)
                     {
-                        dgv.Rows[i].Cells[c].Value = dt.Rows[i][c - 1];
+                        dgv.Rows[i].Cells[c].Value = dt.Rows[i][c - 1].ToString();
                     }
-
                 }
             }
             else

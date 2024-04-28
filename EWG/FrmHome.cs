@@ -9,15 +9,25 @@ namespace EWG
 
         private void BtnReceipt_Click(object sender, EventArgs e)
         {
-            UCRecp uCRecp = new UCRecp();
-            uCRecp.Dock = DockStyle.Fill;
-            PnlContainer.Controls.Clear();
-            PnlContainer.Controls.Add(uCRecp);
+            Load_UC();
         }
 
         private void BtnIngred_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmHome_Load(object sender, EventArgs e)
+        {
+            Load_UC();
+        }
+
+        private void Load_UC()
+        {
+            UCRecp uCRecp = new UCRecp();
+            uCRecp.Dock = DockStyle.Fill;
+            PnlContainer.Controls.Clear();
+            PnlContainer.Controls.Add(uCRecp);
         }
     }
 }

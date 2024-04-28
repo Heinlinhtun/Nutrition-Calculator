@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            BtnCancel = new Button();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCRecp));
             BtnContinue = new Button();
             Gropubosoadf = new GroupBox();
             DGReceipts = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            DGRecpMenu = new ContextMenuStrip(components);
+            editToolStripMenuItem = new ToolStripMenuItem();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
             groupBox1 = new GroupBox();
+            label1 = new Label();
             ComboCat = new ComboBox();
             BtnNew = new Button();
             TxtName = new TextBox();
             TxtPortion = new TextBox();
             BtnAdd = new Button();
             BtnClear = new Button();
+            addIngredientsToolStripMenuItem = new ToolStripMenuItem();
             Gropubosoadf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGReceipts).BeginInit();
+            DGRecpMenu.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
-            // 
-            // BtnCancel
-            // 
-            BtnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            BtnCancel.BackColor = SystemColors.Control;
-            BtnCancel.Location = new Point(795, 504);
-            BtnCancel.Margin = new Padding(4);
-            BtnCancel.Name = "BtnCancel";
-            BtnCancel.Size = new Size(135, 43);
-            BtnCancel.TabIndex = 5;
-            BtnCancel.Text = "&Cancel";
-            BtnCancel.UseVisualStyleBackColor = false;
             // 
             // BtnContinue
             // 
@@ -65,7 +66,7 @@
             BtnContinue.Name = "BtnContinue";
             BtnContinue.Size = new Size(135, 43);
             BtnContinue.TabIndex = 6;
-            BtnContinue.Text = "Conti&nue";
+            BtnContinue.Text = "Conti&nue...";
             BtnContinue.UseVisualStyleBackColor = false;
             // 
             // Gropubosoadf
@@ -85,18 +86,85 @@
             // 
             DGReceipts.AllowUserToAddRows = false;
             DGReceipts.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(224, 224, 224);
+            DGReceipts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DGReceipts.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGReceipts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGReceipts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGReceipts.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            DGReceipts.ContextMenuStrip = DGRecpMenu;
             DGReceipts.Dock = DockStyle.Fill;
+            DGReceipts.GridColor = SystemColors.ControlDark;
             DGReceipts.Location = new Point(4, 26);
             DGReceipts.Margin = new Padding(4);
             DGReceipts.Name = "DGReceipts";
             DGReceipts.ReadOnly = true;
+            DGReceipts.RowHeadersVisible = false;
+            DGReceipts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGReceipts.Size = new Size(498, 453);
             DGReceipts.TabIndex = 0;
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Receipt";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 250;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Category";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.HeaderText = "Portion Size (g)";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // DGRecpMenu
+            // 
+            DGRecpMenu.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem, addIngredientsToolStripMenuItem });
+            DGRecpMenu.Name = "DGRecpMenu";
+            DGRecpMenu.Size = new Size(181, 92);
+            DGRecpMenu.Text = "Menu";
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.Image = (Image)resources.GetObject("editToolStripMenuItem.Image");
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(180, 22);
+            editToolStripMenuItem.Text = "&Edit";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
+            // 
+            // deleteToolStripMenuItem
+            // 
+            deleteToolStripMenuItem.Image = (Image)resources.GetObject("deleteToolStripMenuItem.Image");
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size = new Size(180, 22);
+            deleteToolStripMenuItem.Text = "&Delete";
+            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
+            // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(ComboCat);
             groupBox1.Controls.Add(BtnNew);
             groupBox1.Controls.Add(TxtName);
@@ -110,6 +178,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Receipt Info";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(499, 111);
+            label1.Name = "label1";
+            label1.Size = new Size(23, 21);
+            label1.TabIndex = 7;
+            label1.Text = "g ";
+            // 
             // ComboCat
             // 
             ComboCat.FormattingEnabled = true;
@@ -118,7 +195,7 @@
             ComboCat.Name = "ComboCat";
             ComboCat.Size = new Size(385, 29);
             ComboCat.TabIndex = 2;
-            ComboCat.Text = "Categories";
+            ComboCat.Text = "Select Categories";
             // 
             // BtnNew
             // 
@@ -147,7 +224,7 @@
             TxtPortion.Margin = new Padding(4);
             TxtPortion.Name = "TxtPortion";
             TxtPortion.PlaceholderText = "Portion Size";
-            TxtPortion.Size = new Size(489, 29);
+            TxtPortion.Size = new Size(459, 29);
             TxtPortion.TabIndex = 1;
             // 
             // BtnAdd
@@ -160,6 +237,7 @@
             BtnAdd.TabIndex = 6;
             BtnAdd.Text = "&Add";
             BtnAdd.UseVisualStyleBackColor = false;
+            BtnAdd.Click += BtnAdd_Click;
             // 
             // BtnClear
             // 
@@ -171,12 +249,19 @@
             BtnClear.TabIndex = 6;
             BtnClear.Text = "C&lear";
             BtnClear.UseVisualStyleBackColor = false;
+            BtnClear.Click += BtnClear_Click;
+            // 
+            // addIngredientsToolStripMenuItem
+            // 
+            addIngredientsToolStripMenuItem.Image = (Image)resources.GetObject("addIngredientsToolStripMenuItem.Image");
+            addIngredientsToolStripMenuItem.Name = "addIngredientsToolStripMenuItem";
+            addIngredientsToolStripMenuItem.Size = new Size(180, 22);
+            addIngredientsToolStripMenuItem.Text = "Add Ingredients";
             // 
             // UCRecp
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(BtnCancel);
             Controls.Add(BtnClear);
             Controls.Add(BtnAdd);
             Controls.Add(BtnContinue);
@@ -189,14 +274,13 @@
             Load += UCRecp_Load;
             Gropubosoadf.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)DGReceipts).EndInit();
+            DGRecpMenu.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button BtnCancel;
         private Button BtnContinue;
         private GroupBox Gropubosoadf;
         private DataGridView DGReceipts;
@@ -207,5 +291,14 @@
         private Button BtnAdd;
         private Button BtnNew;
         private Button BtnClear;
+        private Label label1;
+        private ContextMenuStrip DGRecpMenu;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem deleteToolStripMenuItem;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private ToolStripMenuItem addIngredientsToolStripMenuItem;
     }
 }

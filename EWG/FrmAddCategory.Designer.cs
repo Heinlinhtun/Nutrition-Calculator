@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddCategory));
             DGCategories = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
@@ -47,11 +49,21 @@
             DGCategories.AllowUserToAddRows = false;
             DGCategories.AllowUserToDeleteRows = false;
             DGCategories.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(224, 224, 224);
+            DGCategories.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DGCategories.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DGCategories.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGCategories.Columns.AddRange(new DataGridViewColumn[] { Id, name, Type });
             DGCategories.Dock = DockStyle.Fill;
-            DGCategories.GridColor = SystemColors.MenuHighlight;
+            DGCategories.GridColor = SystemColors.ControlDark;
             DGCategories.Location = new Point(3, 23);
             DGCategories.MultiSelect = false;
             DGCategories.Name = "DGCategories";
@@ -68,7 +80,7 @@
             Id.HeaderText = "ID";
             Id.Name = "Id";
             Id.ReadOnly = true;
-            Id.Width = 50;
+            Id.Width = 30;
             // 
             // name
             // 
@@ -76,14 +88,14 @@
             name.HeaderText = "Name";
             name.Name = "name";
             name.ReadOnly = true;
-            name.Width = 150;
+            name.Width = 200;
             // 
             // Type
             // 
+            Type.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Type.HeaderText = "Category Type";
             Type.Name = "Type";
             Type.ReadOnly = true;
-            Type.Width = 200;
             // 
             // TxtCatName
             // 
