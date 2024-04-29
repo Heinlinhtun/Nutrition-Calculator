@@ -40,10 +40,6 @@
             TxtPortion = new TextBox();
             Gropubosoadf = new GroupBox();
             DGReceipts = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             DGRecpMenu = new ContextMenuStrip(components);
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
@@ -51,6 +47,10 @@
             BtnClear = new Button();
             BtnContinue = new Button();
             groupBox1 = new GroupBox();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             Gropubosoadf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGReceipts).BeginInit();
             DGRecpMenu.SuspendLayout();
@@ -158,34 +158,6 @@
             DGReceipts.Size = new Size(663, 358);
             DGReceipts.TabIndex = 0;
             // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Receipt";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Width = 250;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Category";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.HeaderText = "Portion Size (g)";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
             // DGRecpMenu
             // 
             DGRecpMenu.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem, addIngredientsToolStripMenuItem });
@@ -253,6 +225,34 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Receipt Info";
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Receipt";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Category";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.HeaderText = "Portion Size (g)";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
             // UCRecp
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -285,10 +285,6 @@
         private TextBox TxtPortion;
         private GroupBox Gropubosoadf;
         private DataGridView DGReceipts;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
         private ContextMenuStrip DGRecpMenu;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
@@ -296,5 +292,9 @@
         private Button BtnClear;
         private Button BtnContinue;
         private GroupBox groupBox1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
     }
 }
