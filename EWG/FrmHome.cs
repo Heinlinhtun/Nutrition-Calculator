@@ -14,7 +14,10 @@ namespace EWG
 
         private void BtnIngred_Click(object sender, EventArgs e)
         {
-
+            UCIngredients uCRecp = new UCIngredients();
+            uCRecp.Dock = DockStyle.Fill;
+            PnlContainer.Controls.Clear();
+            PnlContainer.Controls.Add(uCRecp);
         }
 
         private void FrmHome_Load(object sender, EventArgs e)

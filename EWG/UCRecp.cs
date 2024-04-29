@@ -56,7 +56,7 @@ namespace EWG
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
-            TxtPortion.Text = "";
+            TxtName.Text = "";
             ComboCat.Text = "Select Categories";
             TxtPortion.Text = "";
 
@@ -85,6 +85,11 @@ namespace EWG
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addIngredientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

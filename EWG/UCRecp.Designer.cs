@@ -32,7 +32,12 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCRecp));
-            BtnContinue = new Button();
+            BtnAdd = new Button();
+            label1 = new Label();
+            ComboCat = new ComboBox();
+            BtnNew = new Button();
+            TxtName = new TextBox();
+            TxtPortion = new TextBox();
             Gropubosoadf = new GroupBox();
             DGReceipts = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -42,43 +47,85 @@
             DGRecpMenu = new ContextMenuStrip(components);
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
-            groupBox1 = new GroupBox();
-            label1 = new Label();
-            ComboCat = new ComboBox();
-            BtnNew = new Button();
-            TxtName = new TextBox();
-            TxtPortion = new TextBox();
-            BtnAdd = new Button();
-            BtnClear = new Button();
             addIngredientsToolStripMenuItem = new ToolStripMenuItem();
+            BtnClear = new Button();
+            BtnContinue = new Button();
+            groupBox1 = new GroupBox();
             Gropubosoadf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGReceipts).BeginInit();
             DGRecpMenu.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // BtnContinue
+            // BtnAdd
             // 
-            BtnContinue.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            BtnContinue.BackColor = SystemColors.Control;
-            BtnContinue.Location = new Point(938, 504);
-            BtnContinue.Margin = new Padding(4);
-            BtnContinue.Name = "BtnContinue";
-            BtnContinue.Size = new Size(135, 43);
-            BtnContinue.TabIndex = 6;
-            BtnContinue.Text = "Conti&nue...";
-            BtnContinue.UseVisualStyleBackColor = false;
+            BtnAdd.BackColor = SystemColors.Control;
+            BtnAdd.Location = new Point(422, 173);
+            BtnAdd.Margin = new Padding(4);
+            BtnAdd.Name = "BtnAdd";
+            BtnAdd.Size = new Size(135, 43);
+            BtnAdd.TabIndex = 20;
+            BtnAdd.Text = "&Add";
+            BtnAdd.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(502, 114);
+            label1.Name = "label1";
+            label1.Size = new Size(23, 21);
+            label1.TabIndex = 7;
+            label1.Text = "g ";
+            // 
+            // ComboCat
+            // 
+            ComboCat.FormattingEnabled = true;
+            ComboCat.Location = new Point(33, 71);
+            ComboCat.Margin = new Padding(4);
+            ComboCat.Name = "ComboCat";
+            ComboCat.Size = new Size(385, 29);
+            ComboCat.TabIndex = 2;
+            ComboCat.Text = "Select Categories";
+            // 
+            // BtnNew
+            // 
+            BtnNew.BackColor = SystemColors.Control;
+            BtnNew.Location = new Point(424, 71);
+            BtnNew.Margin = new Padding(4);
+            BtnNew.Name = "BtnNew";
+            BtnNew.Size = new Size(98, 29);
+            BtnNew.TabIndex = 6;
+            BtnNew.Text = "&New";
+            BtnNew.UseVisualStyleBackColor = false;
+            // 
+            // TxtName
+            // 
+            TxtName.Location = new Point(33, 34);
+            TxtName.Margin = new Padding(4);
+            TxtName.Name = "TxtName";
+            TxtName.PlaceholderText = "Name";
+            TxtName.Size = new Size(489, 29);
+            TxtName.TabIndex = 1;
+            // 
+            // TxtPortion
+            // 
+            TxtPortion.Location = new Point(33, 108);
+            TxtPortion.Margin = new Padding(4);
+            TxtPortion.Name = "TxtPortion";
+            TxtPortion.PlaceholderText = "Portion Size";
+            TxtPortion.Size = new Size(459, 29);
+            TxtPortion.TabIndex = 1;
             // 
             // Gropubosoadf
             // 
             Gropubosoadf.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             Gropubosoadf.Controls.Add(DGReceipts);
-            Gropubosoadf.Location = new Point(571, 13);
+            Gropubosoadf.Location = new Point(565, 4);
             Gropubosoadf.Margin = new Padding(4);
             Gropubosoadf.Name = "Gropubosoadf";
             Gropubosoadf.Padding = new Padding(4);
-            Gropubosoadf.Size = new Size(506, 483);
-            Gropubosoadf.TabIndex = 8;
+            Gropubosoadf.Size = new Size(671, 388);
+            Gropubosoadf.TabIndex = 23;
             Gropubosoadf.TabStop = false;
             Gropubosoadf.Text = "Receipts";
             // 
@@ -108,7 +155,7 @@
             DGReceipts.ReadOnly = true;
             DGReceipts.RowHeadersVisible = false;
             DGReceipts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGReceipts.Size = new Size(498, 453);
+            DGReceipts.Size = new Size(663, 358);
             DGReceipts.TabIndex = 0;
             // 
             // Column1
@@ -143,24 +190,52 @@
             // 
             DGRecpMenu.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem, addIngredientsToolStripMenuItem });
             DGRecpMenu.Name = "DGRecpMenu";
-            DGRecpMenu.Size = new Size(181, 92);
+            DGRecpMenu.Size = new Size(159, 70);
             DGRecpMenu.Text = "Menu";
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.Image = (Image)resources.GetObject("editToolStripMenuItem.Image");
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(180, 22);
+            editToolStripMenuItem.Size = new Size(158, 22);
             editToolStripMenuItem.Text = "&Edit";
-            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Image = (Image)resources.GetObject("deleteToolStripMenuItem.Image");
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(180, 22);
+            deleteToolStripMenuItem.Size = new Size(158, 22);
             deleteToolStripMenuItem.Text = "&Delete";
-            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
+            // 
+            // addIngredientsToolStripMenuItem
+            // 
+            addIngredientsToolStripMenuItem.Image = (Image)resources.GetObject("addIngredientsToolStripMenuItem.Image");
+            addIngredientsToolStripMenuItem.Name = "addIngredientsToolStripMenuItem";
+            addIngredientsToolStripMenuItem.Size = new Size(158, 22);
+            addIngredientsToolStripMenuItem.Text = "Add Ingredients";
+            // 
+            // BtnClear
+            // 
+            BtnClear.BackColor = SystemColors.Control;
+            BtnClear.Location = new Point(279, 173);
+            BtnClear.Margin = new Padding(4);
+            BtnClear.Name = "BtnClear";
+            BtnClear.Size = new Size(135, 43);
+            BtnClear.TabIndex = 19;
+            BtnClear.Text = "C&lear";
+            BtnClear.UseVisualStyleBackColor = false;
+            // 
+            // BtnContinue
+            // 
+            BtnContinue.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            BtnContinue.BackColor = SystemColors.Control;
+            BtnContinue.Location = new Point(1097, 400);
+            BtnContinue.Margin = new Padding(4);
+            BtnContinue.Name = "BtnContinue";
+            BtnContinue.Size = new Size(135, 43);
+            BtnContinue.TabIndex = 21;
+            BtnContinue.Text = "Conti&nue...";
+            BtnContinue.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -169,108 +244,28 @@
             groupBox1.Controls.Add(BtnNew);
             groupBox1.Controls.Add(TxtName);
             groupBox1.Controls.Add(TxtPortion);
-            groupBox1.Location = new Point(4, 4);
+            groupBox1.Location = new Point(9, 4);
             groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4);
             groupBox1.Size = new Size(548, 161);
-            groupBox1.TabIndex = 7;
+            groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
             groupBox1.Text = "Receipt Info";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(499, 111);
-            label1.Name = "label1";
-            label1.Size = new Size(23, 21);
-            label1.TabIndex = 7;
-            label1.Text = "g ";
-            // 
-            // ComboCat
-            // 
-            ComboCat.FormattingEnabled = true;
-            ComboCat.Location = new Point(33, 71);
-            ComboCat.Margin = new Padding(4);
-            ComboCat.Name = "ComboCat";
-            ComboCat.Size = new Size(385, 29);
-            ComboCat.TabIndex = 2;
-            ComboCat.Text = "Select Categories";
-            // 
-            // BtnNew
-            // 
-            BtnNew.BackColor = SystemColors.Control;
-            BtnNew.Location = new Point(424, 71);
-            BtnNew.Margin = new Padding(4);
-            BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(98, 29);
-            BtnNew.TabIndex = 6;
-            BtnNew.Text = "&New";
-            BtnNew.UseVisualStyleBackColor = false;
-            BtnNew.Click += BtnNew_Click;
-            // 
-            // TxtName
-            // 
-            TxtName.Location = new Point(33, 34);
-            TxtName.Margin = new Padding(4);
-            TxtName.Name = "TxtName";
-            TxtName.PlaceholderText = "Name";
-            TxtName.Size = new Size(489, 29);
-            TxtName.TabIndex = 1;
-            // 
-            // TxtPortion
-            // 
-            TxtPortion.Location = new Point(33, 108);
-            TxtPortion.Margin = new Padding(4);
-            TxtPortion.Name = "TxtPortion";
-            TxtPortion.PlaceholderText = "Portion Size";
-            TxtPortion.Size = new Size(459, 29);
-            TxtPortion.TabIndex = 1;
-            // 
-            // BtnAdd
-            // 
-            BtnAdd.BackColor = SystemColors.Control;
-            BtnAdd.Location = new Point(417, 173);
-            BtnAdd.Margin = new Padding(4);
-            BtnAdd.Name = "BtnAdd";
-            BtnAdd.Size = new Size(135, 43);
-            BtnAdd.TabIndex = 6;
-            BtnAdd.Text = "&Add";
-            BtnAdd.UseVisualStyleBackColor = false;
-            BtnAdd.Click += BtnAdd_Click;
-            // 
-            // BtnClear
-            // 
-            BtnClear.BackColor = SystemColors.Control;
-            BtnClear.Location = new Point(274, 173);
-            BtnClear.Margin = new Padding(4);
-            BtnClear.Name = "BtnClear";
-            BtnClear.Size = new Size(135, 43);
-            BtnClear.TabIndex = 6;
-            BtnClear.Text = "C&lear";
-            BtnClear.UseVisualStyleBackColor = false;
-            BtnClear.Click += BtnClear_Click;
-            // 
-            // addIngredientsToolStripMenuItem
-            // 
-            addIngredientsToolStripMenuItem.Image = (Image)resources.GetObject("addIngredientsToolStripMenuItem.Image");
-            addIngredientsToolStripMenuItem.Name = "addIngredientsToolStripMenuItem";
-            addIngredientsToolStripMenuItem.Size = new Size(180, 22);
-            addIngredientsToolStripMenuItem.Text = "Add Ingredients";
             // 
             // UCRecp
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(BtnClear);
             Controls.Add(BtnAdd);
-            Controls.Add(BtnContinue);
             Controls.Add(Gropubosoadf);
+            Controls.Add(BtnClear);
+            Controls.Add(BtnContinue);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             Name = "UCRecp";
-            Size = new Size(1081, 562);
+            Size = new Size(1240, 462);
             Load += UCRecp_Load;
             Gropubosoadf.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)DGReceipts).EndInit();
@@ -281,24 +276,25 @@
         }
 
         #endregion
-        private Button BtnContinue;
-        private GroupBox Gropubosoadf;
-        private DataGridView DGReceipts;
-        private GroupBox groupBox1;
+
+        private Button BtnAdd;
+        private Label label1;
         private ComboBox ComboCat;
+        private Button BtnNew;
         private TextBox TxtName;
         private TextBox TxtPortion;
-        private Button BtnAdd;
-        private Button BtnNew;
-        private Button BtnClear;
-        private Label label1;
-        private ContextMenuStrip DGRecpMenu;
-        private ToolStripMenuItem editToolStripMenuItem;
-        private ToolStripMenuItem deleteToolStripMenuItem;
+        private GroupBox Gropubosoadf;
+        private DataGridView DGReceipts;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
+        private ContextMenuStrip DGRecpMenu;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem deleteToolStripMenuItem;
         private ToolStripMenuItem addIngredientsToolStripMenuItem;
+        private Button BtnClear;
+        private Button BtnContinue;
+        private GroupBox groupBox1;
     }
 }
