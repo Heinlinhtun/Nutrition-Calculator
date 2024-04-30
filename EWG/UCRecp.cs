@@ -31,7 +31,7 @@ namespace EWG
 
         public void comboLoad()
         {
-            string query = "SELECT id ,name  from TblCategories";
+            string query = "SELECT id ,name  from TblCategories WHERE Type = 0";
             SQLHelper.ComboFills(query, ComboCat, "name", "id");
             ComboCat.Text = "Select Categories";
         }
@@ -44,6 +44,7 @@ namespace EWG
                 string[] varArr = { "@name", "@catid", "portionsize" };
                 object[] datArr = { TxtName.Text, Convert.ToInt16(ComboCat.SelectedValue), TxtPortion.Text };
                 SQLHelper.InsertQuery(query, varArr, datArr);
+                TxtClr();
                 dg_load();
             }
             else
@@ -56,10 +57,15 @@ namespace EWG
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
+            TxtClr();
+
+        }
+
+        private void TxtClr()
+        {
             TxtName.Text = "";
             ComboCat.Text = "Select Categories";
             TxtPortion.Text = "";
-
         }
 
         private void dg_load()
@@ -93,5 +99,7 @@ namespace EWG
         {
 
         }
+
+
     }
 }

@@ -35,11 +35,9 @@
             BtnIngred = new Button();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            TxtSearch = new TextBox();
             PnlContainer = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -65,7 +63,6 @@
             BtnCaledMenu.TabIndex = 0;
             BtnCaledMenu.Text = "Calculated Receipts";
             BtnCaledMenu.UseVisualStyleBackColor = false;
-            BtnCaledMenu.Click += BtnReceipt_Click;
             // 
             // BtnReceipt
             // 
@@ -103,22 +100,12 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(TxtSearch);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(187, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(1009, 61);
             panel2.TabIndex = 0;
-            // 
-            // TxtSearch
-            // 
-            TxtSearch.Anchor = AnchorStyles.Right;
-            TxtSearch.Location = new Point(825, 16);
-            TxtSearch.Name = "TxtSearch";
-            TxtSearch.PlaceholderText = "Search";
-            TxtSearch.Size = new Size(172, 27);
-            TxtSearch.TabIndex = 20;
             // 
             // PnlContainer
             // 
@@ -146,8 +133,6 @@
             Load += FrmHome_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -158,7 +143,6 @@
         private Panel panel2;
         private Button BtnReceipt;
         private Button BtnIngred;
-        private TextBox TxtSearch;
         private Panel PnlContainer;
         private Button BtnCaledMenu;
     }

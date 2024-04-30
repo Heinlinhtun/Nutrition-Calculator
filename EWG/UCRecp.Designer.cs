@@ -39,6 +39,7 @@
             TxtName = new TextBox();
             TxtPortion = new TextBox();
             Gropubosoadf = new GroupBox();
+            TxtSearch = new TextBox();
             DGReceipts = new DataGridView();
             DGRecpMenu = new ContextMenuStrip(components);
             editToolStripMenuItem = new ToolStripMenuItem();
@@ -60,18 +61,19 @@
             // BtnAdd
             // 
             BtnAdd.BackColor = SystemColors.Control;
-            BtnAdd.Location = new Point(422, 173);
+            BtnAdd.Location = new Point(422, 208);
             BtnAdd.Margin = new Padding(4);
             BtnAdd.Name = "BtnAdd";
             BtnAdd.Size = new Size(135, 43);
             BtnAdd.TabIndex = 20;
             BtnAdd.Text = "&Add";
             BtnAdd.UseVisualStyleBackColor = false;
+            BtnAdd.Click += BtnAdd_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(502, 114);
+            label1.Location = new Point(499, 151);
             label1.Name = "label1";
             label1.Size = new Size(23, 21);
             label1.TabIndex = 7;
@@ -80,7 +82,7 @@
             // ComboCat
             // 
             ComboCat.FormattingEnabled = true;
-            ComboCat.Location = new Point(33, 71);
+            ComboCat.Location = new Point(33, 111);
             ComboCat.Margin = new Padding(4);
             ComboCat.Name = "ComboCat";
             ComboCat.Size = new Size(385, 29);
@@ -90,26 +92,28 @@
             // BtnNew
             // 
             BtnNew.BackColor = SystemColors.Control;
-            BtnNew.Location = new Point(424, 71);
+            BtnNew.Location = new Point(424, 111);
             BtnNew.Margin = new Padding(4);
             BtnNew.Name = "BtnNew";
             BtnNew.Size = new Size(98, 29);
             BtnNew.TabIndex = 6;
             BtnNew.Text = "&New";
             BtnNew.UseVisualStyleBackColor = false;
+            BtnNew.Click += BtnNew_Click;
             // 
             // TxtName
             // 
             TxtName.Location = new Point(33, 34);
             TxtName.Margin = new Padding(4);
+            TxtName.Multiline = true;
             TxtName.Name = "TxtName";
             TxtName.PlaceholderText = "Name";
-            TxtName.Size = new Size(489, 29);
+            TxtName.Size = new Size(489, 69);
             TxtName.TabIndex = 1;
             // 
             // TxtPortion
             // 
-            TxtPortion.Location = new Point(33, 108);
+            TxtPortion.Location = new Point(33, 148);
             TxtPortion.Margin = new Padding(4);
             TxtPortion.Name = "TxtPortion";
             TxtPortion.PlaceholderText = "Portion Size";
@@ -119,6 +123,7 @@
             // Gropubosoadf
             // 
             Gropubosoadf.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Gropubosoadf.Controls.Add(TxtSearch);
             Gropubosoadf.Controls.Add(DGReceipts);
             Gropubosoadf.Location = new Point(565, 4);
             Gropubosoadf.Margin = new Padding(4);
@@ -129,12 +134,22 @@
             Gropubosoadf.TabStop = false;
             Gropubosoadf.Text = "Receipts";
             // 
+            // TxtSearch
+            // 
+            TxtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            TxtSearch.Location = new Point(442, 29);
+            TxtSearch.Name = "TxtSearch";
+            TxtSearch.PlaceholderText = "Search Ingredients by name";
+            TxtSearch.Size = new Size(222, 29);
+            TxtSearch.TabIndex = 22;
+            // 
             // DGReceipts
             // 
             DGReceipts.AllowUserToAddRows = false;
             DGReceipts.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(224, 224, 224);
             DGReceipts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DGReceipts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DGReceipts.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
@@ -147,15 +162,14 @@
             DGReceipts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DGReceipts.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
             DGReceipts.ContextMenuStrip = DGRecpMenu;
-            DGReceipts.Dock = DockStyle.Fill;
             DGReceipts.GridColor = SystemColors.ControlDark;
-            DGReceipts.Location = new Point(4, 26);
+            DGReceipts.Location = new Point(4, 71);
             DGReceipts.Margin = new Padding(4);
             DGReceipts.Name = "DGReceipts";
             DGReceipts.ReadOnly = true;
             DGReceipts.RowHeadersVisible = false;
             DGReceipts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGReceipts.Size = new Size(663, 358);
+            DGReceipts.Size = new Size(663, 313);
             DGReceipts.TabIndex = 0;
             // 
             // DGRecpMenu
@@ -171,6 +185,7 @@
             editToolStripMenuItem.Name = "editToolStripMenuItem";
             editToolStripMenuItem.Size = new Size(158, 22);
             editToolStripMenuItem.Text = "&Edit";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
@@ -178,6 +193,7 @@
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             deleteToolStripMenuItem.Size = new Size(158, 22);
             deleteToolStripMenuItem.Text = "&Delete";
+            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // addIngredientsToolStripMenuItem
             // 
@@ -185,17 +201,19 @@
             addIngredientsToolStripMenuItem.Name = "addIngredientsToolStripMenuItem";
             addIngredientsToolStripMenuItem.Size = new Size(158, 22);
             addIngredientsToolStripMenuItem.Text = "Add Ingredients";
+            addIngredientsToolStripMenuItem.Click += addIngredientsToolStripMenuItem_Click;
             // 
             // BtnClear
             // 
             BtnClear.BackColor = SystemColors.Control;
-            BtnClear.Location = new Point(279, 173);
+            BtnClear.Location = new Point(279, 208);
             BtnClear.Margin = new Padding(4);
             BtnClear.Name = "BtnClear";
             BtnClear.Size = new Size(135, 43);
             BtnClear.TabIndex = 19;
             BtnClear.Text = "C&lear";
             BtnClear.UseVisualStyleBackColor = false;
+            BtnClear.Click += BtnClear_Click;
             // 
             // BtnContinue
             // 
@@ -220,7 +238,7 @@
             groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(548, 161);
+            groupBox1.Size = new Size(548, 196);
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
             groupBox1.Text = "Receipt Info";
@@ -234,10 +252,11 @@
             // 
             // Column2
             // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column2.HeaderText = "Receipt";
+            Column2.MinimumWidth = 150;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
-            Column2.Width = 200;
             // 
             // Column3
             // 
@@ -248,10 +267,12 @@
             // 
             // Column4
             // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             Column4.HeaderText = "Portion Size (g)";
+            Column4.MinimumWidth = 150;
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
+            Column4.Width = 150;
             // 
             // UCRecp
             // 
@@ -268,6 +289,7 @@
             Size = new Size(1240, 462);
             Load += UCRecp_Load;
             Gropubosoadf.ResumeLayout(false);
+            Gropubosoadf.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DGReceipts).EndInit();
             DGRecpMenu.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
@@ -292,6 +314,7 @@
         private Button BtnClear;
         private Button BtnContinue;
         private GroupBox groupBox1;
+        private TextBox TxtSearch;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

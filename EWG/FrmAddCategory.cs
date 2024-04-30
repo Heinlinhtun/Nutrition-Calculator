@@ -44,8 +44,6 @@ namespace EWG
             {
                 MessageBox.Show("Duplicated Category names or other errors!");
             }
-
-
         }
 
         private void Load_DG()

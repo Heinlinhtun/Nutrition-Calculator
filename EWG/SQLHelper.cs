@@ -83,14 +83,23 @@ namespace EWG
 
         public static void ComboFills(string query, ComboBox cbox2, string DiscolName, string ValColName)
         {
-            DataTable dt = new DataTable();
-            SQLiteCommand cmd = new SQLiteCommand(query, con);
-            SQLiteDataAdapter adap = new SQLiteDataAdapter();
-            adap.SelectCommand = cmd;
-            adap.Fill(dt);
-            cbox2.DisplayMember = DiscolName;
-            cbox2.ValueMember = ValColName;
-            cbox2.DataSource = dt;
+            try
+            {
+                DataTable dt = new DataTable();
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                SQLiteDataAdapter adap = new SQLiteDataAdapter();
+                adap.SelectCommand = cmd;
+                adap.Fill(dt);
+                cbox2.DisplayMember = DiscolName;
+                cbox2.ValueMember = ValColName;
+                cbox2.DataSource = dt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 
