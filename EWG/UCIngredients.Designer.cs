@@ -38,20 +38,6 @@
             TxtFat = new TextBox();
             Gropubosoadf = new GroupBox();
             DGIngredients = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column12 = new DataGridViewTextBoxColumn();
-            Column11 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column13 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column14 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
-            Column10 = new DataGridViewTextBoxColumn();
             DGRecpMenu = new ContextMenuStrip(components);
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
@@ -70,6 +56,20 @@
             BtnAdd = new Button();
             BtnClear = new Button();
             TxtSearch = new TextBox();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column12 = new DataGridViewTextBoxColumn();
+            Column11 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column13 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column14 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
+            Column10 = new DataGridViewTextBoxColumn();
             Gropubosoadf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGIngredients).BeginInit();
             DGRecpMenu.SuspendLayout();
@@ -83,7 +83,6 @@
             TxtPrice.PlaceholderText = "Price (MMK)";
             TxtPrice.Size = new Size(144, 27);
             TxtPrice.TabIndex = 13;
-            TxtPrice.Validated += TxtBox_Validated;
             // 
             // TxtSatFat
             // 
@@ -92,7 +91,6 @@
             TxtSatFat.PlaceholderText = "Saturated Fat";
             TxtSatFat.Size = new Size(144, 27);
             TxtSatFat.TabIndex = 7;
-            TxtSatFat.Validated += TxtBox_Validated;
             // 
             // TxtFibre
             // 
@@ -101,7 +99,6 @@
             TxtFibre.PlaceholderText = "Fibre";
             TxtFibre.Size = new Size(144, 27);
             TxtFibre.TabIndex = 12;
-            TxtFibre.Validated += TxtBox_Validated;
             // 
             // TxtFat
             // 
@@ -110,7 +107,6 @@
             TxtFat.PlaceholderText = "Fat";
             TxtFat.Size = new Size(144, 27);
             TxtFat.TabIndex = 6;
-            TxtFat.Validated += TxtBox_Validated;
             // 
             // Gropubosoadf
             // 
@@ -153,6 +149,178 @@
             DGIngredients.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             DGIngredients.Size = new Size(1061, 391);
             DGIngredients.TabIndex = 0;
+            // 
+            // DGRecpMenu
+            // 
+            DGRecpMenu.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem, addIngredientsToolStripMenuItem });
+            DGRecpMenu.Name = "DGRecpMenu";
+            DGRecpMenu.Size = new Size(159, 70);
+            DGRecpMenu.Text = "Menu";
+            // 
+            // editToolStripMenuItem
+            // 
+            editToolStripMenuItem.Image = (Image)resources.GetObject("editToolStripMenuItem.Image");
+            editToolStripMenuItem.Name = "editToolStripMenuItem";
+            editToolStripMenuItem.Size = new Size(158, 22);
+            editToolStripMenuItem.Text = "&Edit";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            deleteToolStripMenuItem.Image = (Image)resources.GetObject("deleteToolStripMenuItem.Image");
+            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            deleteToolStripMenuItem.Size = new Size(158, 22);
+            deleteToolStripMenuItem.Text = "&Delete";
+            // 
+            // addIngredientsToolStripMenuItem
+            // 
+            addIngredientsToolStripMenuItem.Image = (Image)resources.GetObject("addIngredientsToolStripMenuItem.Image");
+            addIngredientsToolStripMenuItem.Name = "addIngredientsToolStripMenuItem";
+            addIngredientsToolStripMenuItem.Size = new Size(158, 22);
+            addIngredientsToolStripMenuItem.Text = "Add Ingredients";
+            // 
+            // TxtPotass
+            // 
+            TxtPotass.Location = new Point(467, 117);
+            TxtPotass.Name = "TxtPotass";
+            TxtPotass.PlaceholderText = "Potassium";
+            TxtPotass.Size = new Size(144, 27);
+            TxtPotass.TabIndex = 11;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(TxtPrice);
+            groupBox1.Controls.Add(TxtSatFat);
+            groupBox1.Controls.Add(TxtFibre);
+            groupBox1.Controls.Add(TxtFat);
+            groupBox1.Controls.Add(TxtCholes);
+            groupBox1.Controls.Add(TxtPotass);
+            groupBox1.Controls.Add(TxtSugar);
+            groupBox1.Controls.Add(TxtSodium);
+            groupBox1.Controls.Add(TxtCarbohyd);
+            groupBox1.Controls.Add(TxtProtein);
+            groupBox1.Controls.Add(TxtCalories);
+            groupBox1.Controls.Add(ComboCat);
+            groupBox1.Controls.Add(TxtName);
+            groupBox1.Location = new Point(4, 4);
+            groupBox1.Margin = new Padding(4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4);
+            groupBox1.Size = new Size(1069, 189);
+            groupBox1.TabIndex = 11;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Ingredients (per 100 g)";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.Blue;
+            label1.Location = new Point(7, 159);
+            label1.Name = "label1";
+            label1.Size = new Size(257, 20);
+            label1.TabIndex = 8;
+            label1.Text = "Default value of all Ingredients is 0.0 .";
+            // 
+            // TxtCholes
+            // 
+            TxtCholes.Location = new Point(161, 117);
+            TxtCholes.Name = "TxtCholes";
+            TxtCholes.PlaceholderText = "Cholesterol";
+            TxtCholes.Size = new Size(144, 27);
+            TxtCholes.TabIndex = 9;
+            // 
+            // TxtSugar
+            // 
+            TxtSugar.Location = new Point(314, 82);
+            TxtSugar.Name = "TxtSugar";
+            TxtSugar.PlaceholderText = "Sugar";
+            TxtSugar.Size = new Size(144, 27);
+            TxtSugar.TabIndex = 5;
+            // 
+            // TxtSodium
+            // 
+            TxtSodium.Location = new Point(314, 117);
+            TxtSodium.Name = "TxtSodium";
+            TxtSodium.PlaceholderText = "Sodium";
+            TxtSodium.Size = new Size(144, 27);
+            TxtSodium.TabIndex = 10;
+            // 
+            // TxtCarbohyd
+            // 
+            TxtCarbohyd.Location = new Point(161, 82);
+            TxtCarbohyd.Name = "TxtCarbohyd";
+            TxtCarbohyd.PlaceholderText = "Carbohydrates";
+            TxtCarbohyd.Size = new Size(144, 27);
+            TxtCarbohyd.TabIndex = 4;
+            // 
+            // TxtProtein
+            // 
+            TxtProtein.Location = new Point(8, 117);
+            TxtProtein.Name = "TxtProtein";
+            TxtProtein.PlaceholderText = "Protein";
+            TxtProtein.Size = new Size(144, 27);
+            TxtProtein.TabIndex = 8;
+            // 
+            // TxtCalories
+            // 
+            TxtCalories.Location = new Point(8, 82);
+            TxtCalories.Name = "TxtCalories";
+            TxtCalories.PlaceholderText = "Calories";
+            TxtCalories.Size = new Size(144, 27);
+            TxtCalories.TabIndex = 3;
+            // 
+            // ComboCat
+            // 
+            ComboCat.FormattingEnabled = true;
+            ComboCat.Location = new Point(413, 34);
+            ComboCat.Margin = new Padding(4);
+            ComboCat.Name = "ComboCat";
+            ComboCat.Size = new Size(351, 28);
+            ComboCat.TabIndex = 2;
+            ComboCat.Text = "Select Categories";
+            // 
+            // TxtName
+            // 
+            TxtName.Location = new Point(8, 34);
+            TxtName.Margin = new Padding(4);
+            TxtName.Name = "TxtName";
+            TxtName.PlaceholderText = "Name";
+            TxtName.Size = new Size(397, 27);
+            TxtName.TabIndex = 1;
+            // 
+            // BtnAdd
+            // 
+            BtnAdd.BackColor = SystemColors.Control;
+            BtnAdd.Location = new Point(151, 201);
+            BtnAdd.Margin = new Padding(4);
+            BtnAdd.Name = "BtnAdd";
+            BtnAdd.Size = new Size(135, 43);
+            BtnAdd.TabIndex = 15;
+            BtnAdd.Text = "&Add";
+            BtnAdd.UseVisualStyleBackColor = false;
+            BtnAdd.Click += BtnAdd_Click;
+            // 
+            // BtnClear
+            // 
+            BtnClear.BackColor = SystemColors.Control;
+            BtnClear.Location = new Point(8, 201);
+            BtnClear.Margin = new Padding(4);
+            BtnClear.Name = "BtnClear";
+            BtnClear.Size = new Size(135, 43);
+            BtnClear.TabIndex = 14;
+            BtnClear.Text = "C&lear";
+            BtnClear.UseVisualStyleBackColor = false;
+            BtnClear.Click += BtnClear_Click;
+            // 
+            // TxtSearch
+            // 
+            TxtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            TxtSearch.Location = new Point(847, 217);
+            TxtSearch.Name = "TxtSearch";
+            TxtSearch.PlaceholderText = "Search Ingredients by name";
+            TxtSearch.Size = new Size(222, 27);
+            TxtSearch.TabIndex = 16;
             // 
             // Column1
             // 
@@ -207,7 +375,7 @@
             Column5.HeaderText = "Saturated Fat";
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
-            Column5.Width = 150;
+            Column5.Width = 120;
             // 
             // Column6
             // 
@@ -246,185 +414,6 @@
             Column10.MinimumWidth = 100;
             Column10.Name = "Column10";
             Column10.ReadOnly = true;
-            // 
-            // DGRecpMenu
-            // 
-            DGRecpMenu.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem, addIngredientsToolStripMenuItem });
-            DGRecpMenu.Name = "DGRecpMenu";
-            DGRecpMenu.Size = new Size(159, 70);
-            DGRecpMenu.Text = "Menu";
-            // 
-            // editToolStripMenuItem
-            // 
-            editToolStripMenuItem.Image = (Image)resources.GetObject("editToolStripMenuItem.Image");
-            editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(158, 22);
-            editToolStripMenuItem.Text = "&Edit";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            deleteToolStripMenuItem.Image = (Image)resources.GetObject("deleteToolStripMenuItem.Image");
-            deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(158, 22);
-            deleteToolStripMenuItem.Text = "&Delete";
-            // 
-            // addIngredientsToolStripMenuItem
-            // 
-            addIngredientsToolStripMenuItem.Image = (Image)resources.GetObject("addIngredientsToolStripMenuItem.Image");
-            addIngredientsToolStripMenuItem.Name = "addIngredientsToolStripMenuItem";
-            addIngredientsToolStripMenuItem.Size = new Size(158, 22);
-            addIngredientsToolStripMenuItem.Text = "Add Ingredients";
-            // 
-            // TxtPotass
-            // 
-            TxtPotass.Location = new Point(467, 117);
-            TxtPotass.Name = "TxtPotass";
-            TxtPotass.PlaceholderText = "Potassium";
-            TxtPotass.Size = new Size(144, 27);
-            TxtPotass.TabIndex = 11;
-            TxtPotass.Validated += TxtBox_Validated;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(TxtPrice);
-            groupBox1.Controls.Add(TxtSatFat);
-            groupBox1.Controls.Add(TxtFibre);
-            groupBox1.Controls.Add(TxtFat);
-            groupBox1.Controls.Add(TxtCholes);
-            groupBox1.Controls.Add(TxtPotass);
-            groupBox1.Controls.Add(TxtSugar);
-            groupBox1.Controls.Add(TxtSodium);
-            groupBox1.Controls.Add(TxtCarbohyd);
-            groupBox1.Controls.Add(TxtProtein);
-            groupBox1.Controls.Add(TxtCalories);
-            groupBox1.Controls.Add(ComboCat);
-            groupBox1.Controls.Add(TxtName);
-            groupBox1.Location = new Point(4, 4);
-            groupBox1.Margin = new Padding(4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(1069, 189);
-            groupBox1.TabIndex = 11;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Ingredients (per 100 g)";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.Blue;
-            label1.Location = new Point(7, 159);
-            label1.Name = "label1";
-            label1.Size = new Size(257, 20);
-            label1.TabIndex = 8;
-            label1.Text = "Default value of all Ingredients is 0.0 .";
-            // 
-            // TxtCholes
-            // 
-            TxtCholes.Location = new Point(314, 117);
-            TxtCholes.Name = "TxtCholes";
-            TxtCholes.PlaceholderText = "Cholesterol";
-            TxtCholes.Size = new Size(144, 27);
-            TxtCholes.TabIndex = 10;
-            TxtCholes.Validated += TxtBox_Validated;
-            // 
-            // TxtSugar
-            // 
-            TxtSugar.Location = new Point(314, 82);
-            TxtSugar.Name = "TxtSugar";
-            TxtSugar.PlaceholderText = "Sugar";
-            TxtSugar.Size = new Size(144, 27);
-            TxtSugar.TabIndex = 5;
-            TxtSugar.Validated += TxtBox_Validated;
-            // 
-            // TxtSodium
-            // 
-            TxtSodium.Location = new Point(161, 117);
-            TxtSodium.Name = "TxtSodium";
-            TxtSodium.PlaceholderText = "Sodium";
-            TxtSodium.Size = new Size(144, 27);
-            TxtSodium.TabIndex = 9;
-            TxtSodium.Validated += TxtBox_Validated;
-            // 
-            // TxtCarbohyd
-            // 
-            TxtCarbohyd.Location = new Point(161, 82);
-            TxtCarbohyd.Name = "TxtCarbohyd";
-            TxtCarbohyd.PlaceholderText = "Carbohydrates";
-            TxtCarbohyd.Size = new Size(144, 27);
-            TxtCarbohyd.TabIndex = 4;
-            TxtCarbohyd.Validated += TxtBox_Validated;
-            // 
-            // TxtProtein
-            // 
-            TxtProtein.Location = new Point(8, 117);
-            TxtProtein.Name = "TxtProtein";
-            TxtProtein.PlaceholderText = "Protein";
-            TxtProtein.Size = new Size(144, 27);
-            TxtProtein.TabIndex = 8;
-            TxtProtein.Validated += TxtBox_Validated;
-            // 
-            // TxtCalories
-            // 
-            TxtCalories.Location = new Point(8, 82);
-            TxtCalories.Name = "TxtCalories";
-            TxtCalories.PlaceholderText = "Calories";
-            TxtCalories.Size = new Size(144, 27);
-            TxtCalories.TabIndex = 3;
-            TxtCalories.Validated += TxtBox_Validated;
-            // 
-            // ComboCat
-            // 
-            ComboCat.FormattingEnabled = true;
-            ComboCat.Location = new Point(413, 34);
-            ComboCat.Margin = new Padding(4);
-            ComboCat.Name = "ComboCat";
-            ComboCat.Size = new Size(351, 28);
-            ComboCat.TabIndex = 2;
-            ComboCat.Text = "Select Categories";
-            // 
-            // TxtName
-            // 
-            TxtName.Location = new Point(8, 34);
-            TxtName.Margin = new Padding(4);
-            TxtName.Name = "TxtName";
-            TxtName.PlaceholderText = "Name";
-            TxtName.Size = new Size(397, 27);
-            TxtName.TabIndex = 1;
-            // 
-            // BtnAdd
-            // 
-            BtnAdd.BackColor = SystemColors.Control;
-            BtnAdd.Location = new Point(151, 201);
-            BtnAdd.Margin = new Padding(4);
-            BtnAdd.Name = "BtnAdd";
-            BtnAdd.Size = new Size(135, 43);
-            BtnAdd.TabIndex = 15;
-            BtnAdd.Text = "&Add";
-            BtnAdd.UseVisualStyleBackColor = false;
-            BtnAdd.Click += BtnAdd_Click;
-            // 
-            // BtnClear
-            // 
-            BtnClear.BackColor = SystemColors.Control;
-            BtnClear.Location = new Point(8, 201);
-            BtnClear.Margin = new Padding(4);
-            BtnClear.Name = "BtnClear";
-            BtnClear.Size = new Size(135, 43);
-            BtnClear.TabIndex = 14;
-            BtnClear.Text = "C&lear";
-            BtnClear.UseVisualStyleBackColor = false;
-            BtnClear.Click += BtnClear_Click;
-            // 
-            // TxtSearch
-            // 
-            TxtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            TxtSearch.Location = new Point(847, 217);
-            TxtSearch.Name = "TxtSearch";
-            TxtSearch.PlaceholderText = "Search Ingredients by name";
-            TxtSearch.Size = new Size(222, 27);
-            TxtSearch.TabIndex = 16;
             // 
             // UCIngredients
             // 

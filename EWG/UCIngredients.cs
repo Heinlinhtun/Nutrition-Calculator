@@ -46,6 +46,7 @@ namespace EWG
 
         private void ClrTxt()
         {
+            TxtCholes.Text = "";
             TxtName.Text = "";
             TxtCalories.Text = "";
             TxtCarbohyd.Text = "";
@@ -57,6 +58,7 @@ namespace EWG
             TxtSodium.Text = "";
             TxtSugar.Text = "";
             ComboCat.Text = "Select Categories";
+            TxtPrice.Text = "";
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -66,8 +68,8 @@ namespace EWG
                 if (TxtName.Text != "")
                 {
                     string query = "INSERT INTO TblIngredients (name,catid,calories, carbohydrates,sugar, fat, saturated_Fat, protein,cholesterol,sodium, potassium, fiber, price) Values (@name,@catid, @calories, @carbohydrates,@sugar,@fat,@satfat,@protein,@cholesterol, @sodium, @potassium, @fiber,@price)";
-                    string[] varArr = { "@name", "@catid", "@calories", "@carbohydrates", "@sugar", "@fat", "@satfat", "@protein","@cholesterol", "@sodium", "@potassium", "@fiber", "@price" };
-                    object[] datArr = { TxtName.Text, ComboCat.SelectedValue, TxtCalories.Text, TxtCarbohyd.Text, TxtSugar.Text, TxtFat.Text, TxtSatFat.Text, TxtProtein.Text,TxtCholes.Text, TxtSodium.Text, TxtPotass.Text, TxtFibre.Text, TxtPrice.Text };
+                    string[] varArr = { "@name", "@catid", "@calories", "@carbohydrates", "@sugar", "@fat", "@satfat", "@protein", "@cholesterol", "@sodium", "@potassium", "@fiber", "@price" };
+                    object[] datArr = { TxtName.Text, ComboCat.SelectedValue, TxtCalories.Text, TxtCarbohyd.Text, TxtSugar.Text, TxtFat.Text, TxtSatFat.Text, TxtProtein.Text, TxtCholes.Text, TxtSodium.Text, TxtPotass.Text, TxtFibre.Text, TxtPrice.Text };
                     SQLHelper.InsertQuery(query, varArr, datArr);
                     ClrTxt();
                     Load_dg();
