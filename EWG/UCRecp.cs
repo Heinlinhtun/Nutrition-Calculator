@@ -97,6 +97,14 @@ namespace EWG
 
         private void addIngredientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (DGReceipts.SelectedRows.Count > 0)
+            {
+                GlobalVariables.RecpName = DGReceipts.CurrentRow.Cells[1].Value.ToString();
+                FrmAddIngredients addIngredients = new FrmAddIngredients();
+                addIngredients.ShowDialog();
+            }
+
+
 
         }
 

@@ -41,6 +41,10 @@
             Gropubosoadf = new GroupBox();
             TxtSearch = new TextBox();
             DGReceipts = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
             DGRecpMenu = new ContextMenuStrip(components);
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
@@ -48,10 +52,6 @@
             BtnClear = new Button();
             BtnContinue = new Button();
             groupBox1 = new GroupBox();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
             Gropubosoadf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGReceipts).BeginInit();
             DGRecpMenu.SuspendLayout();
@@ -172,6 +172,37 @@
             DGReceipts.Size = new Size(663, 313);
             DGReceipts.TabIndex = 0;
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 30;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Receipt";
+            Column2.MinimumWidth = 150;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Category";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Column4.HeaderText = "Portion Size (g)";
+            Column4.MinimumWidth = 150;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Width = 150;
+            // 
             // DGRecpMenu
             // 
             DGRecpMenu.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem, addIngredientsToolStripMenuItem });
@@ -242,37 +273,6 @@
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
             groupBox1.Text = "Receipt Info";
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 30;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Receipt";
-            Column2.MinimumWidth = 150;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Category";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Column4.HeaderText = "Portion Size (g)";
-            Column4.MinimumWidth = 150;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 150;
             // 
             // UCRecp
             // 
