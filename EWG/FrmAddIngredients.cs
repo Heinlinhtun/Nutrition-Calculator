@@ -22,8 +22,9 @@ namespace EWG
         {
             TxtRecpName.Text = GlobalVariables.RecpName;
             Combo_Load();
-            dt.Columns.Add("name", typeof(String));
-            dt.Columns.Add("ratio", typeof(double));
+            dt.Columns.Add("Name", typeof(String));
+            dt.Columns.Add("Ratio", typeof(double));
+            dt.Columns.Add("Cost", typeof(Int32));
         }
 
         private void Combo_Load()
@@ -79,9 +80,15 @@ namespace EWG
                 string getPrice = "select price from TblIngredients WHERE id = '" + dt.Rows[i][0] + "' ";
 
                 double pricepergram = Convert.ToDouble(SQLHelper.getData(getPrice)) / 100;
-                MessageBox.Show((Convert.ToDouble(dt.Rows[i][1]) * pricepergram).ToString());
+                //MessageBox.Show((Convert.ToDouble(dt.Rows[i][1]) * pricepergram).ToString());
+                dt.Rows[i][2] = Convert.ToDouble(dt.Rows[i][1]) * pricepergram;
             }
-
+            DataRow dr = dt.NewRow();
+            dr[0] = "Total";
+            int sumObject;
+            sumObject = Convert.ToInt32(dt.Compute("Sum(Cost)", ""));
+            dr[2] = sumObject;
+            dt.Rows.Add(dr);
         }
     }
 }
