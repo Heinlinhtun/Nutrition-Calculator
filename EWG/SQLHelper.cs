@@ -31,6 +31,30 @@ namespace EWG
                 con.Close();
             }
         }
+        public static string getData(string query)
+        {
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SQLiteDataAdapter adp = new SQLiteDataAdapter();
+            DataSet ds = new DataSet();
+            SQLiteCommand cmd = new SQLiteCommand(query, con);
+            adp.SelectCommand = cmd;
+            adp.Fill(ds);
+            DataTable dt = ds.Tables[0];
+            if (dt.Rows.Count == 1)
+            {
+                return dt.Rows[0][0].ToString();
+            }
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            return null;
+
+        }
 
         public static void dgView_Load(string query, DataGridView dgv)
         {

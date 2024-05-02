@@ -17,42 +17,70 @@ namespace EWG
         {
             InitializeComponent();
         }
-
-
+        DataTable dt = new DataTable();
         private void FrmAddIngredients_Load(object sender, EventArgs e)
         {
             TxtRecpName.Text = GlobalVariables.RecpName;
             Combo_Load();
+            dt.Columns.Add("name", typeof(String));
+            dt.Columns.Add("ratio", typeof(double));
         }
 
         private void Combo_Load()
         {
-            string loadingre = "SELECT name from TblIngredients";
-            SQLHelper.ComboFills(loadingre, ComboIngre, "name", "name");
+            string loadingre = "SELECT id,name from TblIngredients";
+            SQLHelper.ComboFills(loadingre, ComboIngre, "name", "id");
             ComboIngre.Text = "Select Ingredients";
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("name", typeof(String));
-            dt.Columns.Add("ratio", typeof(double));
-            DataRow dr = dt.NewRow();
-            dr[0] = ComboIngre.Text;
-            dr[1] = TxtProp.Text;
-            Button button = new Button();
-            button.Text = dr[0].ToString();
-            button.Height = 50;
-            button.AutoSize = true;
-            PnlIngre.Controls.Add(button);
-            button.Click += DynamicButton_Click;
-            TxtProp.Text = "";
+            if (ComboIngre.Text != "Select Ingredients" && TxtProp.Text != "")
+            {
+                try
+                {
+                    DataRow dr = dt.NewRow();
+                    dr[0] = ComboIngre.SelectedValue;
+                    dr[1] = TxtProp.Text;
+                    dt.Rows.Add(dr);
+                    Button button = new Button();
+                    button.Text = ComboIngre.Text;
+                    button.Height = 50;
+                    button.AutoSize = true;
+                    PnlIngre.Controls.Add(button);
+                    button.Click += DynamicButton_Click;
+                    TxtProp.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+
         }
 
         private void DynamicButton_Click(object? sender, EventArgs e)
         {
             Button btn = sender as Button;
             btn.Dispose();
+
+        }
+
+        private void BtnCalculate_Click(object sender, EventArgs e)
+        {
+            CalculateNutri();
+        }
+
+        private void CalculateNutri()
+        {
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string getPrice = "select price from TblIngredients WHERE id = '" + dt.Rows[i][0] + "' ";
+
+                double pricepergram = Convert.ToDouble(SQLHelper.getData(getPrice)) / 100;
+                MessageBox.Show((Convert.ToDouble(dt.Rows[i][1]) * pricepergram).ToString());
+            }
 
         }
     }

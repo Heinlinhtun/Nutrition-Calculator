@@ -100,6 +100,7 @@
             BtnCalculate.TabIndex = 6;
             BtnCalculate.Text = "Calculate";
             BtnCalculate.UseVisualStyleBackColor = true;
+            BtnCalculate.Click += BtnCalculate_Click;
             // 
             // checkBox1
             // 
