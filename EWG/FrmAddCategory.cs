@@ -35,7 +35,7 @@ namespace EWG
                     string query = "INSERT INTO TblCategories (name,Type ) Values (@name, @type)";
                     string[] varArr = { "@name", "@type" };
                     object[] datArr = { TxtCatName.Text, ComboCatType.SelectedIndex };
-                    SQLHelper.InsertQuery(query, varArr, datArr);
+                    SQLHelper.InsertAndUpdateQuery(query, varArr, datArr);
                     _receipt.comboLoad();
                     Load_DG();
                 }

@@ -38,24 +38,6 @@
             TxtFat = new TextBox();
             Gropubosoadf = new GroupBox();
             DGIngredients = new DataGridView();
-            DGRecpMenu = new ContextMenuStrip(components);
-            editToolStripMenuItem = new ToolStripMenuItem();
-            deleteToolStripMenuItem = new ToolStripMenuItem();
-            addIngredientsToolStripMenuItem = new ToolStripMenuItem();
-            TxtPotass = new TextBox();
-            groupBox1 = new GroupBox();
-            label1 = new Label();
-            TxtCholes = new TextBox();
-            TxtSugar = new TextBox();
-            TxtSodium = new TextBox();
-            TxtCarbohyd = new TextBox();
-            TxtProtein = new TextBox();
-            TxtCalories = new TextBox();
-            ComboCat = new ComboBox();
-            TxtName = new TextBox();
-            BtnAdd = new Button();
-            BtnClear = new Button();
-            TxtSearch = new TextBox();
             Column1 = new DataGridViewTextBoxColumn();
             Column12 = new DataGridViewTextBoxColumn();
             Column11 = new DataGridViewTextBoxColumn();
@@ -70,6 +52,23 @@
             Column8 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
             Column10 = new DataGridViewTextBoxColumn();
+            DGRecpMenu = new ContextMenuStrip(components);
+            editToolStripMenuItem = new ToolStripMenuItem();
+            deleteToolStripMenuItem = new ToolStripMenuItem();
+            TxtPotass = new TextBox();
+            groupBox1 = new GroupBox();
+            label1 = new Label();
+            TxtCholes = new TextBox();
+            TxtSugar = new TextBox();
+            TxtSodium = new TextBox();
+            TxtCarbohyd = new TextBox();
+            TxtProtein = new TextBox();
+            TxtCalories = new TextBox();
+            ComboCat = new ComboBox();
+            TxtName = new TextBox();
+            BtnAdd = new Button();
+            BtnClear = new Button();
+            TxtSearch = new TextBox();
             Gropubosoadf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGIngredients).BeginInit();
             DGRecpMenu.SuspendLayout();
@@ -150,33 +149,121 @@
             DGIngredients.Size = new Size(1061, 391);
             DGIngredients.TabIndex = 0;
             // 
+            // Column1
+            // 
+            Column1.Frozen = true;
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Width = 30;
+            // 
+            // Column12
+            // 
+            Column12.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column12.HeaderText = "Name";
+            Column12.MinimumWidth = 200;
+            Column12.Name = "Column12";
+            Column12.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            Column11.HeaderText = "Category";
+            Column11.Name = "Column11";
+            Column11.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Calories";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            Column13.HeaderText = "Carbohydrates";
+            Column13.Name = "Column13";
+            Column13.ReadOnly = true;
+            Column13.Width = 110;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Sugar";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            Column4.HeaderText = "Fat";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Saturated Fat";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Width = 120;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Protein";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            Column14.HeaderText = "Cholesterol";
+            Column14.Name = "Column14";
+            Column14.ReadOnly = true;
+            Column14.Width = 130;
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Sodium";
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.HeaderText = "Potassium";
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Fiber";
+            Column9.Name = "Column9";
+            Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            Column10.HeaderText = "Price";
+            Column10.MinimumWidth = 100;
+            Column10.Name = "Column10";
+            Column10.ReadOnly = true;
+            // 
             // DGRecpMenu
             // 
-            DGRecpMenu.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem, addIngredientsToolStripMenuItem });
+            DGRecpMenu.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem });
             DGRecpMenu.Name = "DGRecpMenu";
-            DGRecpMenu.Size = new Size(159, 70);
+            DGRecpMenu.Size = new Size(108, 48);
             DGRecpMenu.Text = "Menu";
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.Image = (Image)resources.GetObject("editToolStripMenuItem.Image");
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(158, 22);
+            editToolStripMenuItem.Size = new Size(107, 22);
             editToolStripMenuItem.Text = "&Edit";
+            editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Image = (Image)resources.GetObject("deleteToolStripMenuItem.Image");
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(158, 22);
+            deleteToolStripMenuItem.Size = new Size(107, 22);
             deleteToolStripMenuItem.Text = "&Delete";
-            // 
-            // addIngredientsToolStripMenuItem
-            // 
-            addIngredientsToolStripMenuItem.Image = (Image)resources.GetObject("addIngredientsToolStripMenuItem.Image");
-            addIngredientsToolStripMenuItem.Name = "addIngredientsToolStripMenuItem";
-            addIngredientsToolStripMenuItem.Size = new Size(158, 22);
-            addIngredientsToolStripMenuItem.Text = "Add Ingredients";
+            deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // TxtPotass
             // 
@@ -297,7 +384,7 @@
             BtnAdd.Name = "BtnAdd";
             BtnAdd.Size = new Size(135, 43);
             BtnAdd.TabIndex = 15;
-            BtnAdd.Text = "&Add";
+            BtnAdd.Text = "&Save";
             BtnAdd.UseVisualStyleBackColor = false;
             BtnAdd.Click += BtnAdd_Click;
             // 
@@ -321,99 +408,7 @@
             TxtSearch.PlaceholderText = "Search Ingredients by name";
             TxtSearch.Size = new Size(222, 27);
             TxtSearch.TabIndex = 16;
-            // 
-            // Column1
-            // 
-            Column1.Frozen = true;
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 30;
-            // 
-            // Column12
-            // 
-            Column12.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column12.HeaderText = "Name";
-            Column12.MinimumWidth = 200;
-            Column12.Name = "Column12";
-            Column12.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            Column11.HeaderText = "Category";
-            Column11.Name = "Column11";
-            Column11.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Calories";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            Column13.HeaderText = "Carbohydrates";
-            Column13.Name = "Column13";
-            Column13.ReadOnly = true;
-            Column13.Width = 110;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Sugar";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            Column4.HeaderText = "Fat";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Saturated Fat";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Width = 120;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Protein";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Column14
-            // 
-            Column14.HeaderText = "Cholesterol";
-            Column14.Name = "Column14";
-            Column14.ReadOnly = true;
-            Column14.Width = 130;
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Sodium";
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Potassium";
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Fiber";
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            Column10.HeaderText = "Price";
-            Column10.MinimumWidth = 100;
-            Column10.Name = "Column10";
-            Column10.ReadOnly = true;
+            TxtSearch.TextChanged += TxtSearch_TextChanged;
             // 
             // UCIngredients
             // 
@@ -448,7 +443,6 @@
         private ContextMenuStrip DGRecpMenu;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
-        private ToolStripMenuItem addIngredientsToolStripMenuItem;
         private TextBox TxtPotass;
         private GroupBox groupBox1;
         private TextBox TxtSugar;

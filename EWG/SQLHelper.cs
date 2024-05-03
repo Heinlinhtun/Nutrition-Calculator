@@ -31,7 +31,7 @@ namespace EWG
                 con.Close();
             }
         }
-        public static string getData(string query)
+        public static string getData(string query, int Col)
         {
 
             if (con.State == ConnectionState.Closed)
@@ -46,7 +46,7 @@ namespace EWG
             DataTable dt = ds.Tables[0];
             if (dt.Rows.Count == 1)
             {
-                return dt.Rows[0][0].ToString();
+                return dt.Rows[0][Col].ToString();
             }
             if (con.State == ConnectionState.Open)
             {
@@ -84,7 +84,7 @@ namespace EWG
             dgv.ClearSelection();
         }
 
-        public static void InsertQuery(string query, string[] arr1, object[] arr2)
+        public static void InsertAndUpdateQuery(string query, string[] arr1, object[] arr2)
         {
             if (con.State == ConnectionState.Closed)
             {

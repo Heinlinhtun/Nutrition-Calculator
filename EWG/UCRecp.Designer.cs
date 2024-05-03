@@ -50,7 +50,6 @@
             deleteToolStripMenuItem = new ToolStripMenuItem();
             addIngredientsToolStripMenuItem = new ToolStripMenuItem();
             BtnClear = new Button();
-            BtnContinue = new Button();
             groupBox1 = new GroupBox();
             Gropubosoadf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGReceipts).BeginInit();
@@ -66,7 +65,7 @@
             BtnAdd.Name = "BtnAdd";
             BtnAdd.Size = new Size(135, 43);
             BtnAdd.TabIndex = 20;
-            BtnAdd.Text = "&Add";
+            BtnAdd.Text = "&Save";
             BtnAdd.UseVisualStyleBackColor = false;
             BtnAdd.Click += BtnAdd_Click;
             // 
@@ -129,19 +128,20 @@
             Gropubosoadf.Margin = new Padding(4);
             Gropubosoadf.Name = "Gropubosoadf";
             Gropubosoadf.Padding = new Padding(4);
-            Gropubosoadf.Size = new Size(671, 388);
+            Gropubosoadf.Size = new Size(671, 443);
             Gropubosoadf.TabIndex = 23;
             Gropubosoadf.TabStop = false;
-            Gropubosoadf.Text = "Receipts";
+            Gropubosoadf.Text = "Recipes";
             // 
             // TxtSearch
             // 
             TxtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             TxtSearch.Location = new Point(442, 29);
             TxtSearch.Name = "TxtSearch";
-            TxtSearch.PlaceholderText = "Search Ingredients by name";
+            TxtSearch.PlaceholderText = "Search Recipes by name";
             TxtSearch.Size = new Size(222, 29);
             TxtSearch.TabIndex = 22;
+            TxtSearch.TextChanged += TxtSearch_TextChanged;
             // 
             // DGReceipts
             // 
@@ -169,7 +169,7 @@
             DGReceipts.ReadOnly = true;
             DGReceipts.RowHeadersVisible = false;
             DGReceipts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGReceipts.Size = new Size(663, 313);
+            DGReceipts.Size = new Size(663, 368);
             DGReceipts.TabIndex = 0;
             // 
             // Column1
@@ -182,7 +182,7 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Receipt";
+            Column2.HeaderText = "Recipes";
             Column2.MinimumWidth = 150;
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
@@ -246,18 +246,6 @@
             BtnClear.UseVisualStyleBackColor = false;
             BtnClear.Click += BtnClear_Click;
             // 
-            // BtnContinue
-            // 
-            BtnContinue.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            BtnContinue.BackColor = SystemColors.Control;
-            BtnContinue.Location = new Point(1097, 400);
-            BtnContinue.Margin = new Padding(4);
-            BtnContinue.Name = "BtnContinue";
-            BtnContinue.Size = new Size(135, 43);
-            BtnContinue.TabIndex = 21;
-            BtnContinue.Text = "Conti&nue...";
-            BtnContinue.UseVisualStyleBackColor = false;
-            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(label1);
@@ -272,7 +260,7 @@
             groupBox1.Size = new Size(548, 196);
             groupBox1.TabIndex = 22;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Receipt Info";
+            groupBox1.Text = "Recipes Info";
             // 
             // UCRecp
             // 
@@ -281,7 +269,6 @@
             Controls.Add(BtnAdd);
             Controls.Add(Gropubosoadf);
             Controls.Add(BtnClear);
-            Controls.Add(BtnContinue);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
@@ -312,7 +299,6 @@
         private ToolStripMenuItem deleteToolStripMenuItem;
         private ToolStripMenuItem addIngredientsToolStripMenuItem;
         private Button BtnClear;
-        private Button BtnContinue;
         private GroupBox groupBox1;
         private TextBox TxtSearch;
         private DataGridViewTextBoxColumn Column1;

@@ -108,7 +108,7 @@
             // ComboCatType
             // 
             ComboCatType.FormattingEnabled = true;
-            ComboCatType.Items.AddRange(new object[] { "Receipt Category", "Ingredients Category" });
+            ComboCatType.Items.AddRange(new object[] { "Recipes Category", "Ingredients Category" });
             ComboCatType.Location = new Point(12, 45);
             ComboCatType.Name = "ComboCatType";
             ComboCatType.Size = new Size(407, 28);

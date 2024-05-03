@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,12 +39,24 @@ namespace EWG
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            string query;
             if (TxtName.Text != "" || ComboCat.Text != "Select Categories" || TxtPortion.Text != "")
             {
-                string query = "INSERT INTO TblReceipts (name,catID, portionSize) Values (@name, @catid, @portionsize)";
-                string[] varArr = { "@name", "@catid", "portionsize" };
-                object[] datArr = { TxtName.Text, Convert.ToInt16(ComboCat.SelectedValue), TxtPortion.Text };
-                SQLHelper.InsertQuery(query, varArr, datArr);
+                if (editMode == 0)
+                {
+                    query = "INSERT INTO TblReceipts (name,catID, portionSize) Values (@name, @catid, @portionsize)";
+                    string[] varArr = { "@name", "@catid", "@portionsize" };
+                    object[] datArr = { TxtName.Text, Convert.ToInt16(ComboCat.SelectedValue), TxtPortion.Text };
+                    SQLHelper.InsertAndUpdateQuery(query, varArr, datArr);
+                }
+                else
+                {
+                    query = "UPDATE TblReceipts SET name = @name, catID = @catid, portionSize = @portionsize WHERE name = '" + DGReceipts.CurrentRow.Cells[1].Value.ToString() + "' AND portionSize = '" + DGReceipts.CurrentRow.Cells[3].Value.ToString() + "'";
+                    string[] varArr = { "@name", "@catid", "@portionsize" };
+                    object[] datArr = { TxtName.Text, Convert.ToInt16(ComboCat.SelectedValue), TxtPortion.Text };
+                    SQLHelper.InsertAndUpdateQuery(query, varArr, datArr);
+                }
+
                 TxtClr();
                 dg_load();
             }
@@ -51,14 +64,13 @@ namespace EWG
             {
                 MessageBox.Show("Fill all fields!");
             }
-
+            editMode = 0;
 
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
             TxtClr();
-
         }
 
         private void TxtClr()
@@ -70,7 +82,16 @@ namespace EWG
 
         private void dg_load()
         {
-            string loadDG = "SELECT TblReceipts.name as RecpName, TblCategories.name as CatName, TblReceipts.portionSize as PortionSize From TblReceipts INNER JOIN TblCategories ON TblReceipts.catID= TblCategories.id ";
+            string loadDG;
+            if (TxtSearch.Text != "")
+            {
+                loadDG = "SELECT TblReceipts.name as RecpName, TblCategories.name as CatName, TblReceipts.portionSize as PortionSize From TblReceipts INNER JOIN TblCategories ON TblReceipts.catID= TblCategories.id WHERE TblReceipts.name LIKE '%" + TxtSearch.Text + "%' ";
+
+            }
+            else
+            {
+                loadDG = "SELECT TblReceipts.name as RecpName, TblCategories.name as CatName, TblReceipts.portionSize as PortionSize From TblReceipts INNER JOIN TblCategories ON TblReceipts.catID= TblCategories.id";
+            }
             SQLHelper.dgView_Load(loadDG, DGReceipts);
 
         }
@@ -92,7 +113,10 @@ namespace EWG
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TxtName.Text = DGReceipts.CurrentRow.Cells[1].Value.ToString();
+            ComboCat.Text = DGReceipts.CurrentRow.Cells[2].Value.ToString();
+            TxtPortion.Text = DGReceipts.CurrentRow.Cells[3].Value.ToString();
+            editMode = 1;
         }
 
         private void addIngredientsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -108,6 +132,9 @@ namespace EWG
 
         }
 
-
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dg_load();
+        }
     }
 }

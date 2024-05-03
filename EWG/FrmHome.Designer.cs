@@ -59,7 +59,7 @@
             BtnReceipt.Name = "BtnReceipt";
             BtnReceipt.Size = new Size(181, 50);
             BtnReceipt.TabIndex = 0;
-            BtnReceipt.Text = "Receipts";
+            BtnReceipt.Text = "Recipes";
             BtnReceipt.UseVisualStyleBackColor = false;
             BtnReceipt.Click += BtnReceipt_Click;
             // 
