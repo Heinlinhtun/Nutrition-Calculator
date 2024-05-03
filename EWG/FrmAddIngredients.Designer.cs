@@ -35,7 +35,6 @@
             label1 = new Label();
             BtnAdd = new Button();
             BtnCalculate = new Button();
-            checkBox1 = new CheckBox();
             groupBox1 = new GroupBox();
             PnlIngre = new FlowLayoutPanel();
             label2 = new Label();
@@ -102,18 +101,6 @@
             BtnCalculate.UseVisualStyleBackColor = true;
             BtnCalculate.Click += BtnCalculate_Click;
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Checked = true;
-            checkBox1.CheckState = CheckState.Checked;
-            checkBox1.Location = new Point(575, 348);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(144, 24);
-            checkBox1.TabIndex = 7;
-            checkBox1.Text = "Save to Database";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(PnlIngre);
@@ -150,7 +137,6 @@
             ClientSize = new Size(892, 393);
             Controls.Add(label2);
             Controls.Add(groupBox1);
-            Controls.Add(checkBox1);
             Controls.Add(BtnCalculate);
             Controls.Add(BtnAdd);
             Controls.Add(label1);
@@ -179,7 +165,6 @@
         private Label label1;
         private Button BtnAdd;
         private Button BtnCalculate;
-        private CheckBox checkBox1;
         private GroupBox groupBox1;
         private FlowLayoutPanel PnlIngre;
         private Label label2;

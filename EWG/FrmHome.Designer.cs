@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
             panel1 = new Panel();
-            BtnCaledMenu = new Button();
             BtnReceipt = new Button();
             BtnIngred = new Button();
             pictureBox1 = new PictureBox();
@@ -43,7 +42,6 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(BtnCaledMenu);
             panel1.Controls.Add(BtnReceipt);
             panel1.Controls.Add(BtnIngred);
             panel1.Controls.Add(pictureBox1);
@@ -53,16 +51,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(187, 571);
             panel1.TabIndex = 0;
-            // 
-            // BtnCaledMenu
-            // 
-            BtnCaledMenu.BackColor = SystemColors.Control;
-            BtnCaledMenu.Location = new Point(3, 251);
-            BtnCaledMenu.Name = "BtnCaledMenu";
-            BtnCaledMenu.Size = new Size(181, 50);
-            BtnCaledMenu.TabIndex = 0;
-            BtnCaledMenu.Text = "Calculated Receipts";
-            BtnCaledMenu.UseVisualStyleBackColor = false;
             // 
             // BtnReceipt
             // 
@@ -144,6 +132,5 @@
         private Button BtnReceipt;
         private Button BtnIngred;
         private Panel PnlContainer;
-        private Button BtnCaledMenu;
     }
 }

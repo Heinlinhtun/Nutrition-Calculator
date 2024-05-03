@@ -17,7 +17,7 @@ namespace EWG
         {
             InitializeComponent();
         }
-        DataTable dt = new DataTable();
+        public DataTable dt = new DataTable();
         private void FrmAddIngredients_Load(object sender, EventArgs e)
         {
             TxtRecpName.Text = GlobalVariables.RecpName;
@@ -41,7 +41,7 @@ namespace EWG
                 try
                 {
                     DataRow dr = dt.NewRow();
-                    dr[0] = ComboIngre.SelectedValue;
+                    dr[0] = ComboIngre.Text;
                     dr[1] = TxtProp.Text;
                     dt.Rows.Add(dr);
                     Button button = new Button();
@@ -71,14 +71,17 @@ namespace EWG
         private void BtnCalculate_Click(object sender, EventArgs e)
         {
             CalculateNutri();
+            FrmCalculated frmCalculated = new FrmCalculated(this);
+            this.Close();
+            frmCalculated.ShowDialog();
+
         }
 
         private void CalculateNutri()
         {
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                string getPrice = "select price from TblIngredients WHERE id = '" + dt.Rows[i][0] + "' ";
-
+                string getPrice = "select price from TblIngredients WHERE name = '" + dt.Rows[i][0] + "' ";
                 double pricepergram = Convert.ToDouble(SQLHelper.getData(getPrice)) / 100;
                 //MessageBox.Show((Convert.ToDouble(dt.Rows[i][1]) * pricepergram).ToString());
                 dt.Rows[i][2] = Convert.ToDouble(dt.Rows[i][1]) * pricepergram;
@@ -89,6 +92,7 @@ namespace EWG
             sumObject = Convert.ToInt32(dt.Compute("Sum(Cost)", ""));
             dr[2] = sumObject;
             dt.Rows.Add(dr);
+            GlobalVariables.csvName = TxtRecpName.Text;
         }
     }
 }

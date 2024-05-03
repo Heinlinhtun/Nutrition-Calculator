@@ -8,6 +8,7 @@ namespace EWG
 {
     internal class GlobalVariables
     {
-        public static string RecpName { get; set; }
+        public static string? RecpName { get; set; }
+        public static string? csvName { get; set; }
     }
 }
